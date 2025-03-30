@@ -2,6 +2,19 @@
 import UserProfile from "../../../components/UserProfile";
 import { useState, useEffect } from "react";
 import Alert from "@/components/Alert";
+interface User {
+  _id: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  address: string;
+  city: string;
+  state: string;
+  postalCode: string;
+  dateOfBirth: string;
+  ssn: string;
+  bankAccount?: BankDetails;
+};
 export default function ProfilePage() {
     const [users, setUsers] = useState<User[]>([]);
     const [loading, setLoading] = useState(true);
