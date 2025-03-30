@@ -13,10 +13,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       const db = await dbConnect();
       const transactionsCollection = db.collection("transactions");
-
+      var id;
+      if(!user.id){
+        id = user._id
+      }else{
+        id = user.id
+      }
       const transactions = await transactionsCollection
         .find({
-          $or: [{ senderId: user.id }, { receiverId: user.email }],
+          $or: [{ senderId: id }, { receiverId: user.email }],
         })
         .sort({ timestamp: -1 })
         .toArray();

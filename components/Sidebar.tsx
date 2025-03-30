@@ -91,8 +91,9 @@ const Sidebar = () => {
           const isActive = pathname === item.route || pathname?.startsWith(`${item.route}/`)
 
           return (
+            <div key={item.label} className={!session?.user.isAdmin && item.label ==="Admin Dashboard"? "hidden" :  ""}>
             <Link href={item.route} key={item.label}
-              className={cn('sidebar-link', { 'bg-bank-gradient': isActive })}
+              className={cn('sidebar-link', { 'bg-bank-gradient': isActive }, )}
             >
               <div className="relative size-6 ">
                 <Image 
@@ -108,6 +109,7 @@ const Sidebar = () => {
                 {item.label}
               </p>
             </Link>
+            </div>
           )
         })}
         </div>
@@ -123,8 +125,9 @@ const Sidebar = () => {
           {sidebarLinks.map((item) => {
             const isActive = pathname === item.route || pathname?.startsWith(`${item.route}/`);
             return (
+              <div key={item.label} className={!session?.user.isAdmin && item.label ==="Admin Dashboard"? "hidden" :  "py-2 px-4 w-full rounded-md"}>
               <Link href={item.route} key={item.label}
-                className={cn('sidebar-link py-2 px-4 w-full rounded-md', { 'bg-bank-gradient': isActive })}
+                className={cn('sidebar-link ', { 'bg-bank-gradient': isActive })}
                 onClick={() => setIsOpen(false)}
               >
                 <div className="relative w-6 h-6">
@@ -137,6 +140,7 @@ const Sidebar = () => {
                 </div>
                 <p className={cn("sidebar-label", { "!text-white": isActive })}>{item.label}</p>
               </Link>
+              </div>
             );
             
           })}

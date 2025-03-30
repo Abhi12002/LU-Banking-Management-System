@@ -55,7 +55,7 @@ if(bankData.length > 0) {
   totalBalance = bankData?.reduce((sum: number, account: any) => sum + (account.balance || 0), 0) || 0;
 }
   const totalAccounts = bankData?.length || 0;
-
+console.log(bankData)
   return (
     <section className="home">
       <div className="home-content">

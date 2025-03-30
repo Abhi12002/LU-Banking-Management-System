@@ -25,6 +25,7 @@ declare module "next-auth" {
       institution:{institution_id: string; name:string;};
       balance: number;
     }[];
+    isAdmin: boolean;
   }
 
   interface Session {
@@ -52,6 +53,7 @@ interface CustomJWT extends JWT {
     institution:{institution_id: string; name:string;};
     balance: number;
   }[];
+  isAdmin: boolean,
 }
 
 const authOptions: NextAuthOptions = {
@@ -92,7 +94,8 @@ const authOptions: NextAuthOptions = {
           postalCode: user.postalCode,
           dateOfBirth: user.dateOfBirth,
           ssn: user.ssn,
-          bankAccounts: user.bank_accounts || [], // Store multiple bank accounts as an array
+          bankAccounts: user.bank_accounts || [],
+          isAdmin: user.isAdmin, // Store multiple bank accounts as an array
         };
       },
     }),
@@ -115,7 +118,8 @@ const authOptions: NextAuthOptions = {
         token.postalCode = user.postalCode;
         token.dateOfBirth = user.dateOfBirth;
         token.ssn = user.ssn;
-        token.bankAccounts = user.bankAccounts || []; // Store bank accounts as an array
+        token.bankAccounts = user.bankAccounts || [];
+        token.isAdmin = user.isAdmin; // Store bank accounts as an array
       }
       return token as CustomJWT;
     },
@@ -134,7 +138,8 @@ const authOptions: NextAuthOptions = {
           postalCode: token.postalCode,
           dateOfBirth: token.dateOfBirth,
           ssn: token.ssn,
-          bankAccounts: token.bankAccounts || [], // Ensure session user stores bank accounts as an array
+          bankAccounts: token.bankAccounts || [],
+          isAdmin : token.isAdmin, // Ensure session user stores bank accounts as an array
         };
       }
       return session;

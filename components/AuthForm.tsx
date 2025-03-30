@@ -8,11 +8,12 @@ import { useRouter } from 'next/navigation';
 import { validateAddress } from '../pages/api/geocode';
 import { signIn } from 'next-auth/react';
 import ReCAPTCHA from 'react-google-recaptcha';
-
+import { Eye, EyeOff } from "lucide-react";
 const SITE_KEY = "6Lfn1_sqAAAAAAtme695m0QVl2aSQZuVZ_G0iPIq"; // Replace with your actual reCAPTCHA site key
 const AuthForm = ({ type }: { type: string }) => {
     const router = useRouter();
     const [recaptchaToken, setRecaptchaToken] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [userData, setUserData] = useState({
         firstName: '',
         lastName: '',
@@ -177,8 +178,26 @@ const AuthForm = ({ type }: { type: string }) => {
                     <input type="email" name="email" placeholder="Enter your email" value={userData.email} onChange={handleInputChange} required className="border p-3 w-full rounded-md" />
                 </div>
                 <div className="w-[100%]">
-                    <label htmlFor="password">Password:</label>
-                    <input type="password" name="password" placeholder="Enter your password" value={userData.password} onChange={handleInputChange} minLength={7} required className="border p-3 w-full rounded-md" />
+                <label htmlFor="password">Password:</label>
+            <div className="relative">
+                <input
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    placeholder="Enter your password"
+                    value={userData.password}
+                    onChange={handleInputChange}
+                    minLength={7}
+                    required
+                    className="border p-3 w-full rounded-md pr-10"
+                />
+                <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+                >
+                    {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                </button>
+            </div>
                 </div>
 
                 {/* reCAPTCHA for Sign In Only */}

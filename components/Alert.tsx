@@ -22,7 +22,7 @@ const Alert: React.FC<AlertProps> = ({ message, type }) => {
 
   return (
     <div
-      className={`text-[1.2rem] font-semibold font-bol fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-lg text-white w-[25rem] h-[8.8rem] ${
+      className={`text-[1.2rem] font-semibold font-bol fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-lg text-white w-[15rem] h-[4rem] md:w-[20rem] md:h-[6rem] lg:w-[25rem] lg:h-[8.8rem] ${
         type === 'success'
           ? 'bg-green-500'
           : type === 'error'

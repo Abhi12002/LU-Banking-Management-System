@@ -33,6 +33,7 @@ const TransactionList = ()=>{
   
       fetchTransactions();
     }, [session]);
+    console.log(transactions)
     return (
         <div>
             {loading ? (
@@ -54,12 +55,21 @@ const TransactionList = ()=>{
              </>
              :
               <>
-              <p><strong>Sent by: </strong>{txn.senderEmailId}</p>
+              {txn.senderEmailId == session?.user.email? 
+              <><p><strong>Sent To: </strong>{txn.receiverId}</p>
+              <p><strong>From Account </strong>{txn.senderAccountName}</p>
+              <p><strong>Amount:</strong> ${txn.amount}</p>
+              <p><strong>Status:</strong> {txn.status}</p>
+              <p><strong>Message:</strong> {txn.message || "No message"}</p>
+              <p className="text-sm text-gray-500">{new Date(txn.timestamp).toLocaleString()}</p></> 
+              : 
+              <><p><strong>Sent by: </strong>{txn.senderEmailId}</p>
               <p><strong>Received in: </strong>{txn.receiverAccountName}</p>
               <p><strong>Amount:</strong> ${txn.amount}</p>
               <p><strong>Status:</strong> {txn.status}</p>
               <p><strong>Message:</strong> {txn.message || "No message"}</p>
-              <p className="text-sm text-gray-500">{new Date(txn.timestamp).toLocaleString()}</p></>
+              <p className="text-sm text-gray-500">{new Date(txn.timestamp).toLocaleString()}</p></>}
+              </>
              }
 
           </li>
