@@ -21,11 +21,6 @@ This system was designed to emulate real-world online banking applications, maki
 
 ---
 
-## 📸 Preview
-
-![App Screenshot](https://user-images.githubusercontent.com/Abhi12002/screenshot.png) <!-- Replace with your own hosted screenshot -->
-
----
 
 ## 📚 Table of Contents
 
@@ -176,7 +171,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 📬 Contact
 
-**Abhishek Mishra**  
+**Abhinav Mishra**  
 - 📧 mishraabinav30@gmail.com  
 - 💻 GitHub: [@Abhi12002](https://github.com/Abhi12002)
 
