@@ -1,77 +1,90 @@
+<h1 align="center">🏦 LU Banking Management System – Capstone Project</h1>
 
-# 💼 LU Banking Management System
+<p align="center">
+  <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/Framework-Next.js-blue.svg"></a>
+  <a href="https://www.mongodb.com/"><img src="https://img.shields.io/badge/Database-MongoDB-green.svg"></a>
+  <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/UI-TailwindCSS-38bdf8.svg"></a>
+  <a href="https://img.shields.io/badge/License-MIT-blue.svg"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
+  <a href="https://github.com/Abhi12002/LU-Banking-Management-System/stargazers"><img src="https://img.shields.io/github/stars/Abhi12002/LU-Banking-Management-System?style=social"></a>
+</p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Next.js](https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?logo=mongodb&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?logo=tailwind-css&logoColor=white)
-![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
-![Platform](https://img.shields.io/badge/Platform-Web-blue)
+---
 
-A comprehensive **Banking Management System** built using modern web technologies like **Next.js**, **Tailwind CSS**, and **MongoDB**. This project simulates essential banking operations such as user authentication, account creation, deposits, withdrawals, and secure data management — all in a clean, responsive, and production-ready interface.
+## 📝 Overview
 
-This system was designed to emulate real-world online banking applications, making it perfect for academic projects, personal learning, or as a base for further development in fintech applications.
+A production-grade **banking management system** developed as a final-year **capstone project** at Lakehead University. This full-stack web application replicates real-world banking workflows—user authentication, account creation, transactions, and admin control—in a secure and scalable environment.
+
+The platform is built with **Next.js**, **Tailwind CSS**, **MongoDB**, and **Node.js**, focusing on **performance**, **user experience**, and **extensibility**. It’s designed to simulate practical fintech systems while laying the groundwork for future **data science**, **DevOps**, and **MLOps** applications.
+
+---
+
+## 📸 UI Snapshot
+
+<p align="center">
+  <img src="./BankingSystem.png" alt="Login Screen" width="700" />
+</p>
 
 ---
 
 ## 🚀 Live Demo
 
-🌐 Check out the live deployed version here:  
-🔗 [https://comp-4431-group-project.vercel.app](https://comp-4431-group-project.vercel.app)
+🌐 [https://comp-4431-group-project.vercel.app](https://comp-4431-group-project.vercel.app)
 
 ---
 
+## 📊 Data Science Relevance
 
-## 📚 Table of Contents
+This project is engineered for **data-driven scalability**, enabling future analytics and machine learning use cases:
 
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Getting Started](#-getting-started)
-- [Project Structure](#-project-structure)
-- [Environment Variables](#-environment-variables)
-- [Usage](#-usage)
-- [Future Improvements](#-future-improvements)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Contact](#-contact)
+* 🧩 **Structured Data Model:** Transactional records, user metadata, account types
+* 🔄 **API-Driven Data Flows:** REST APIs allow streamlined data aggregation and downstream pipelines
+* 📊 **ML Integration Ready:** Supports fraud detection, credit risk modeling, and anomaly detection
+* 📈 **Real-Time Dashboards (Planned):** Ideal for future data visualization with tools like D3, Plotly, or Streamlit
+* 🛠️ **Deployable Infrastructure:** Aligns with cloud-native, containerized, CI/CD-ready workflows
 
 ---
 
 ## ✨ Features
 
-🔐 **User Authentication**  
-🏦 **Banking Operations**  
-🧩 **Modular Codebase**  
-📱 **Responsive Design**  
-🛠 **Robust Backend**
+* 🔐 **Secure Authentication** with NextAuth & reCAPTCHA
+* 💳 **User Banking Actions**: Open accounts, deposit, withdraw, view history
+* 🧮 **Balance Tracking** with real-time updates
+* 📋 **Admin Dashboard**: View/manage all users and transactions
+* 💬 **Notifications System** *(Planned)*
+* 📱 **Fully Responsive Design** optimized for mobile/tablet/desktop
+* 🛡️ **Role-based Access Control (RBAC)** built-in
 
 ---
 
 ## ⚙️ Tech Stack
 
-### Frontend
-- [Next.js](https://nextjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [TypeScript](https://www.typescriptlang.org/)
+### 💻 Frontend
 
-### Backend
-- [Next.js API Routes](https://nextjs.org/docs/api-routes/introduction)
-- [MongoDB](https://www.mongodb.com/)
-- [Mongoose](https://mongoosejs.com/)
+* [Next.js](https://nextjs.org/) – React-based frontend framework
+* [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework
+* [TypeScript](https://www.typescriptlang.org/) – Type-safe frontend development
 
-### Authentication
-- [NextAuth.js](https://next-auth.js.org/)
+### 🧠 Backend
+
+* [Next.js API Routes](https://nextjs.org/docs/api-routes/introduction) – Integrated backend
+* [MongoDB](https://www.mongodb.com/) – NoSQL cloud database
+* [Mongoose](https://mongoosejs.com/) – ODM for MongoDB
+
+### 🔐 Auth & Security
+
+* [NextAuth.js](https://next-auth.js.org/) – Authentication & session management
+* [Google reCAPTCHA](https://www.google.com/recaptcha/about/) – Bot protection
 
 ---
 
 ## 🏁 Getting Started
 
-### Prerequisites
+### 🔧 Prerequisites
 
-- Node.js (v16 or newer)
-- MongoDB
+* Node.js v16+
+* MongoDB Atlas account (or local MongoDB)
 
-### Installation
+### 📦 Installation
 
 ```bash
 git clone https://github.com/Abhi12002/LU-Banking-Management-System.git
@@ -79,9 +92,9 @@ cd LU-Banking-Management-System
 npm install
 ```
 
-### Configuration
+### 🔐 Environment Setup
 
-Create a `.env.local`:
+Create `.env.local` with:
 
 ```env
 MONGODB_URI=your_mongodb_connection_string
@@ -96,70 +109,61 @@ GITHUB_ID=your_client_id
 GITHUB_SECRET=your_client_secret
 ```
 
-### Run Locally
+### ▶️ Run Locally
 
 ```bash
 npm run dev
 ```
 
-Go to [http://localhost:3000](http://localhost:3000)
+Visit: [http://localhost:3000](http://localhost:3000)
 
 ---
 
 ## 📁 Project Structure
 
 ```
-.
-├── app/
-├── components/
-├── constants/
-├── lib/
-├── models/
-├── pages/api/
-├── public/
-├── styles/
-├── types/
-└── .env.local
+LU-Banking-Management-System/
+├── app/               # App entry point
+├── components/        # Shared UI components
+├── constants/         # Static values/config
+├── lib/               # API helpers, utilities
+├── models/            # Mongoose models (User, Account, Transaction)
+├── pages/api/         # Backend API routes
+├── public/            # Static assets
+├── styles/            # Global CSS
+├── types/             # TypeScript types
+└── .env.local         # Environment configuration
 ```
 
 ---
 
 ## 🧪 Usage
 
-### For Users
-- Register/Login
-- Create accounts
-- Deposit/Withdraw
-- View history
+### 👤 User Flow
 
-### For Admins
-- View all accounts
-- Monitor transactions
+* Sign up/login securely
+* Create multiple bank accounts
+* Perform deposits & withdrawals
+* View transaction history in dashboard
+
+### 🛡️ Admin Flow
+
+* View all registered users
+* Monitor all transactions
+* (Planned) Export transaction logs & analytics
 
 ---
 
 ## 🔮 Future Improvements
 
-- [ ] Admin Dashboard & Analytics
-- [ ] Notifications for transactions
-- [ ] Export to PDF/CSV
-- [ ] Two-Factor Authentication
-- [ ] Dark Mode
-- [ ] Accessibility Enhancements
-
----
-
-## 🤝 Contributing
-
-```bash
-git clone https://github.com/Abhi12002/LU-Banking-Management-System.git
-git checkout -b feature/your-feature
-# make changes
-git commit -m "feat: your message"
-git push origin feature/your-feature
-```
-
-Open a pull request 🚀
+* 📊 Admin Analytics Dashboard (charts, KPIs)
+* 📧 Notifications for large transactions
+* 📤 Export reports to CSV/PDF
+* 🔑 Two-Factor Authentication (2FA)
+* 🌙 Dark Mode UI toggle
+* ♿ Full Accessibility (ARIA, WCAG compliance)
+* 🧠 ML Models: Fraud detection, spending categorization, credit scoring
+* 🐳 Dockerized deployment with CI/CD workflows
 
 ---
 
@@ -171,10 +175,9 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 📬 Contact
 
-**Abhinav Mishra**  
-- 📧 mishraabinav30@gmail.com  
-- 💻 GitHub: [@Abhi12002](https://github.com/Abhi12002)
+**Abhinav Mishra**
+📧 [mishraabinav30@gmail.com](mailto:mishraabinav30@gmail.com)
+💻 [GitHub – @Abhi12002](https://github.com/Abhi12002)
+🔗 [LinkedIn – Abhinav Mishra](https://www.linkedin.com/in/abhinav-mishra-4b72b120b/)
 
----
-
-> Built with ❤️ for education, innovation, and practical banking system simulation.
+> Built with ❤️ to simulate real-world banking infrastructure, enable hands-on full stack experience, and support data-driven fintech exploration.
